@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <string.h>
+
+void main() {
+   long int x;
+   long int y;
+
+   long int gcd(long int a, long int b) {
+      long int value;
+
+      if ( b == 0 ) { 
+         value = a;
+      }
+      else {
+         value = gcd(b, a % b);
+         return value;
+      }
+   }
+
+
+   { char s[256]; gets(s); sscanf(s, "%ld", &x); }
+   { char s[256]; gets(s); sscanf(s, "%ld", &y); }
+   printf("%ld\n", gcd(x, y));
+}

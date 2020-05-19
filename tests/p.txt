@@ -1,0 +1,14 @@
+PROGRAM example;
+VAR x,y : INTEGER;
+FUNCTION gcd (a , b : INTEGER) : INTEGER;
+VAR value : INTEGER;
+BEGIN
+IF b = 0 THEN value:= a;
+ELSE value := gcd(b, a MOD b) ;
+RETURN value;
+ENDIF;
+END;
+BEGIN
+READ(x, y);
+WRITE(gcd(x, y));
+END.
